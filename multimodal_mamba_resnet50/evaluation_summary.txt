@@ -1,0 +1,38 @@
+CHEST X-RAY MODEL EVALUATION REPORT
+==================================================
+
+Architecture: multimodal_mamba
+Evaluation Date: 2025-09-28 18:13:54
+Total Samples: 1992
+
+OVERALL PERFORMANCE
+------------------------------
+Mean AUC: 0.7751 ± 0.0868
+AUC Range: [0.6507, 0.9060]
+Mean PR-AUC: 0.4021
+Mean F1 Score: 0.3855
+95% Confidence Interval: [0.7649, 0.7848]
+
+STATISTICAL SIGNIFICANCE
+------------------------------
+Significantly better than random: Yes
+p-value: 0.000000
+
+PER-DISEASE PERFORMANCE
+------------------------------
+Disease              AUC      PR-AUC   F1       Prevalence
+------------------------------------------------------------
+Atelectasis          0.6806   0.2982   0.3607   0.1511    
+Cardiomegaly         0.8545   0.5407   0.3616   0.0858    
+Effusion             0.7491   0.4006   0.4307   0.1752    
+Infiltration         0.6507   0.3404   0.4223   0.2299    
+Mass                 0.7356   0.3586   0.4062   0.1386    
+Nodule               0.7005   0.3248   0.3432   0.1295    
+Pneumonia            0.6640   0.1812   0.2219   0.0788    
+Pneumothorax         0.8193   0.4576   0.4364   0.1300    
+Consolidation        0.7457   0.2853   0.3701   0.1260    
+Edema                0.8840   0.5154   0.4894   0.1079    
+Emphysema            0.9060   0.7493   0.5782   0.1376    
+Fibrosis             0.8510   0.4858   0.4659   0.1104    
+Pleural_Thickening   0.7173   0.2654   0.3337   0.1205    
+Hernia               0.8922   0.4265   0.1767   0.0131    

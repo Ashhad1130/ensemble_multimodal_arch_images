@@ -1,0 +1,246 @@
+2025-09-28 17:27:52,758 - __main__ - INFO - Logging setup complete. Log file: multimodal_anogan_resnet50/training_multimodal_anogan.log
+2025-09-28 17:27:52,780 - __main__ - INFO - Configuration validation passed
+2025-09-28 17:27:52,783 - pipeline - INFO - Pipeline initialized with fixed random seeds
+2025-09-28 17:27:52,783 - __main__ - INFO - Starting pipeline execution...
+2025-09-28 17:27:52,783 - pipeline - INFO - ============================================================
+2025-09-28 17:27:52,783 - pipeline - INFO - STARTING CHEST X-RAY ANALYSIS PIPELINE
+2025-09-28 17:27:52,783 - pipeline - INFO - Architecture: multimodal_anogan
+2025-09-28 17:27:52,783 - pipeline - INFO - Device: cuda
+2025-09-28 17:27:52,783 - pipeline - INFO - ============================================================
+2025-09-28 17:27:52,803 - pipeline - INFO - CSV validation passed: 13272 rows found
+2025-09-28 17:27:52,816 - pipeline - INFO - Image directory validation passed: 13272 image files found
+2025-09-28 17:27:52,816 - pipeline - INFO - 
+Data validation passed successfully!
+2025-09-28 17:27:52,816 - pipeline - INFO - Preparing data loaders with multi-label stratification...
+2025-09-28 17:27:52,831 - dataset - INFO - Loaded CSV with 13272 rows and columns: ['Image Index', 'Finding Labels', 'Follow-up #', 'Patient ID', 'Patient Age', 'Patient Gender', 'View Position', 'OriginalImage[Width', 'Height]', 'OriginalImagePixelSpacing[x', 'y]']
+2025-09-28 17:27:57,479 - dataset - INFO - Class weights calculated:
+2025-09-28 17:27:57,480 - dataset - INFO -   Atelectasis: 1854 samples (14.0%), weight: 0.886
+2025-09-28 17:27:57,480 - dataset - INFO -   Cardiomegaly: 1169 samples (8.8%), weight: 1.094
+2025-09-28 17:27:57,480 - dataset - INFO -   Effusion: 2321 samples (17.5%), weight: 0.785
+2025-09-28 17:27:57,481 - dataset - INFO -   Infiltration: 3096 samples (23.3%), weight: 0.656
+2025-09-28 17:27:57,481 - dataset - INFO -   Mass: 1753 samples (13.2%), weight: 0.912
+2025-09-28 17:27:57,481 - dataset - INFO -   Nodule: 1627 samples (12.3%), weight: 0.945
+2025-09-28 17:27:57,481 - dataset - INFO -   Pneumonia: 1091 samples (8.2%), weight: 1.125
+2025-09-28 17:27:57,481 - dataset - INFO -   Pneumothorax: 1869 samples (14.1%), weight: 0.883
+2025-09-28 17:27:57,481 - dataset - INFO -   Consolidation: 1643 samples (12.4%), weight: 0.941
+2025-09-28 17:27:57,481 - dataset - INFO -   Edema: 1503 samples (11.3%), weight: 0.981
+2025-09-28 17:27:57,481 - dataset - INFO -   Emphysema: 1875 samples (14.1%), weight: 0.881
+2025-09-28 17:27:57,481 - dataset - INFO -   Fibrosis: 1440 samples (10.8%), weight: 1.000
+2025-09-28 17:27:57,481 - dataset - INFO -   Pleural_Thickening: 1544 samples (11.6%), weight: 0.969
+2025-09-28 17:27:57,481 - dataset - INFO -   Hernia: 177 samples (1.3%), weight: 1.942
+2025-09-28 17:27:57,481 - dataset - INFO - Dataset loaded: 13272 samples for full
+2025-09-28 17:27:57,488 - dataset - INFO - Multi-label stratification: 14/14 classes have enough samples
+2025-09-28 17:27:57,538 - dataset - WARNING - Stratified split failed (The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.). Using random split.
+2025-09-28 17:27:57,539 - pipeline - INFO - Data loaders created successfully:
+2025-09-28 17:27:57,539 - pipeline - INFO -   Training: 9290 samples
+2025-09-28 17:27:57,539 - pipeline - INFO -   Validation: 1990 samples
+2025-09-28 17:27:57,539 - pipeline - INFO -   Testing: 1992 samples
+2025-09-28 17:27:57,539 - pipeline - INFO -   Batch size: 64, Workers: 8
+2025-09-28 17:27:57,539 - pipeline - INFO - Setting up model: multimodal_anogan
+2025-09-28 17:27:58,164 - models.unified_model - INFO - Initialized Multimodal AnoGAN with resnet50
+2025-09-28 17:27:58,164 - models.unified_model - INFO - Initialized multimodal_anogan with resnet50
+2025-09-28 17:27:58,165 - pipeline - INFO - Model created successfully:
+2025-09-28 17:27:58,166 - pipeline - INFO -   Architecture: multimodal_anogan
+2025-09-28 17:27:58,166 - pipeline - INFO -   Backbone: resnet50
+2025-09-28 17:27:58,166 - pipeline - INFO -   Total parameters: 89,014,741
+2025-09-28 17:27:58,166 - pipeline - INFO -   Trainable parameters: 89,014,741
+2025-09-28 17:27:58,166 - pipeline - INFO -   Model size: ~339.6 MB
+2025-09-28 17:27:58,166 - pipeline - INFO -   Device: cuda
+2025-09-28 17:27:58,166 - pipeline - INFO - Starting model training...
+2025-09-28 17:27:58,414 - trainer - INFO - GAN training enabled for AnoGAN architecture (using BCEWithLogitsLoss)
+2025-09-28 17:27:58,414 - trainer - INFO - Mixed precision training enabled
+2025-09-28 17:27:58,414 - trainer - INFO - Trainer initialized for multimodal_anogan
+2025-09-28 17:27:58,414 - trainer - INFO - Starting training for 50 epochs
+2025-09-28 17:27:58,415 - trainer - INFO - Architecture: multimodal_anogan
+2025-09-28 17:27:58,415 - trainer - INFO - Device: cuda
+2025-09-28 17:27:58,415 - trainer - INFO - Mixed Precision: True
+2025-09-28 17:27:58,415 - trainer - INFO - GAN Training: True
+2025-09-28 17:28:26,221 - trainer - INFO - Epoch 1/50
+2025-09-28 17:28:26,221 - trainer - INFO -   Train Losses - Total: 0.5919, Cls: 0.4922, Rec: 0.9968, Adv: 0.0142
+2025-09-28 17:28:26,221 - trainer - INFO -   Validation AUC: 0.7399
+2025-09-28 17:28:26,221 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:28:26,947 - trainer - INFO - Best model checkpoint saved: AUC=0.7399
+2025-09-28 17:28:26,948 - trainer - INFO -   ✓ New best model! AUC: 0.7399
+2025-09-28 17:28:54,464 - trainer - INFO - Epoch 2/50
+2025-09-28 17:28:54,465 - trainer - INFO -   Train Losses - Total: 0.4068, Cls: 0.3278, Rec: 0.7896, Adv: 0.0168
+2025-09-28 17:28:54,465 - trainer - INFO -   Validation AUC: 0.7727
+2025-09-28 17:28:54,465 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:28:55,547 - trainer - INFO - Best model checkpoint saved: AUC=0.7727
+2025-09-28 17:28:55,548 - trainer - INFO -   ✓ New best model! AUC: 0.7727
+2025-09-28 17:29:22,281 - trainer - INFO - Epoch 3/50
+2025-09-28 17:29:22,281 - trainer - INFO -   Train Losses - Total: 0.3522, Cls: 0.2767, Rec: 0.7556, Adv: 0.0202
+2025-09-28 17:29:22,281 - trainer - INFO -   Validation AUC: 0.7769
+2025-09-28 17:29:22,281 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:29:23,520 - trainer - INFO - Best model checkpoint saved: AUC=0.7769
+2025-09-28 17:29:23,520 - trainer - INFO -   ✓ New best model! AUC: 0.7769
+2025-09-28 17:29:50,410 - trainer - INFO - Epoch 4/50
+2025-09-28 17:29:50,411 - trainer - INFO -   Train Losses - Total: 0.3140, Cls: 0.2398, Rec: 0.7421, Adv: 0.0234
+2025-09-28 17:29:50,411 - trainer - INFO -   Validation AUC: 0.7756
+2025-09-28 17:29:50,411 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:30:17,094 - trainer - INFO - Epoch 5/50
+2025-09-28 17:30:17,094 - trainer - INFO -   Train Losses - Total: 0.2698, Cls: 0.1965, Rec: 0.7327, Adv: 0.0255
+2025-09-28 17:30:17,094 - trainer - INFO -   Validation AUC: 0.7673
+2025-09-28 17:30:17,094 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:30:43,814 - trainer - INFO - Epoch 6/50
+2025-09-28 17:30:43,815 - trainer - INFO -   Train Losses - Total: 0.2281, Cls: 0.1556, Rec: 0.7254, Adv: 0.0279
+2025-09-28 17:30:43,815 - trainer - INFO -   Validation AUC: 0.7545
+2025-09-28 17:30:43,815 - trainer - INFO -   Learning Rate: 1.00e-04
+2025-09-28 17:31:11,328 - trainer - INFO - Epoch 7/50
+2025-09-28 17:31:11,328 - trainer - INFO -   Train Losses - Total: 0.1974, Cls: 0.1254, Rec: 0.7192, Adv: 0.0292
+2025-09-28 17:31:11,328 - trainer - INFO -   Validation AUC: 0.7566
+2025-09-28 17:31:11,328 - trainer - INFO -   Learning Rate: 5.00e-05
+2025-09-28 17:31:38,035 - trainer - INFO - Epoch 8/50
+2025-09-28 17:31:38,035 - trainer - INFO -   Train Losses - Total: 0.1690, Cls: 0.0978, Rec: 0.7117, Adv: 0.0325
+2025-09-28 17:31:38,035 - trainer - INFO -   Validation AUC: 0.7750
+2025-09-28 17:31:38,035 - trainer - INFO -   Learning Rate: 5.00e-05
+2025-09-28 17:32:04,669 - trainer - INFO - Epoch 9/50
+2025-09-28 17:32:04,669 - trainer - INFO -   Train Losses - Total: 0.1484, Cls: 0.0776, Rec: 0.7082, Adv: 0.0336
+2025-09-28 17:32:04,669 - trainer - INFO -   Validation AUC: 0.7710
+2025-09-28 17:32:04,669 - trainer - INFO -   Learning Rate: 5.00e-05
+2025-09-28 17:32:31,319 - trainer - INFO - Epoch 10/50
+2025-09-28 17:32:31,319 - trainer - INFO -   Train Losses - Total: 0.1371, Cls: 0.0666, Rec: 0.7057, Adv: 0.0353
+2025-09-28 17:32:31,319 - trainer - INFO -   Validation AUC: 0.7721
+2025-09-28 17:32:31,319 - trainer - INFO -   Learning Rate: 5.00e-05
+2025-09-28 17:32:57,971 - trainer - INFO - Epoch 11/50
+2025-09-28 17:32:57,971 - trainer - INFO -   Train Losses - Total: 0.1296, Cls: 0.0592, Rec: 0.7031, Adv: 0.0379
+2025-09-28 17:32:57,971 - trainer - INFO -   Validation AUC: 0.7709
+2025-09-28 17:32:57,971 - trainer - INFO -   Learning Rate: 2.50e-05
+2025-09-28 17:33:25,986 - trainer - INFO - Epoch 12/50
+2025-09-28 17:33:25,986 - trainer - INFO -   Train Losses - Total: 0.1237, Cls: 0.0537, Rec: 0.6996, Adv: 0.0395
+2025-09-28 17:33:25,986 - trainer - INFO -   Validation AUC: 0.7772
+2025-09-28 17:33:25,986 - trainer - INFO -   Learning Rate: 2.50e-05
+2025-09-28 17:33:26,913 - trainer - INFO - Best model checkpoint saved: AUC=0.7772
+2025-09-28 17:33:26,913 - trainer - INFO -   ✓ New best model! AUC: 0.7772
+2025-09-28 17:33:53,494 - trainer - INFO - Epoch 13/50
+2025-09-28 17:33:53,494 - trainer - INFO -   Train Losses - Total: 0.1175, Cls: 0.0478, Rec: 0.6975, Adv: 0.0415
+2025-09-28 17:33:53,494 - trainer - INFO -   Validation AUC: 0.7747
+2025-09-28 17:33:53,494 - trainer - INFO -   Learning Rate: 2.50e-05
+2025-09-28 17:34:20,101 - trainer - INFO - Epoch 14/50
+2025-09-28 17:34:20,101 - trainer - INFO -   Train Losses - Total: 0.1142, Cls: 0.0445, Rec: 0.6970, Adv: 0.0432
+2025-09-28 17:34:20,101 - trainer - INFO -   Validation AUC: 0.7719
+2025-09-28 17:34:20,101 - trainer - INFO -   Learning Rate: 2.50e-05
+2025-09-28 17:34:46,987 - trainer - INFO - Epoch 15/50
+2025-09-28 17:34:46,988 - trainer - INFO -   Train Losses - Total: 0.1115, Cls: 0.0420, Rec: 0.6955, Adv: 0.0456
+2025-09-28 17:34:46,988 - trainer - INFO -   Validation AUC: 0.7736
+2025-09-28 17:34:46,988 - trainer - INFO -   Learning Rate: 2.50e-05
+2025-09-28 17:35:13,722 - trainer - INFO - Epoch 16/50
+2025-09-28 17:35:13,722 - trainer - INFO -   Train Losses - Total: 0.1092, Cls: 0.0397, Rec: 0.6953, Adv: 0.0468
+2025-09-28 17:35:13,722 - trainer - INFO -   Validation AUC: 0.7751
+2025-09-28 17:35:13,722 - trainer - INFO -   Learning Rate: 1.25e-05
+2025-09-28 17:35:41,120 - trainer - INFO - Epoch 17/50
+2025-09-28 17:35:41,120 - trainer - INFO -   Train Losses - Total: 0.1075, Cls: 0.0383, Rec: 0.6922, Adv: 0.0481
+2025-09-28 17:35:41,120 - trainer - INFO -   Validation AUC: 0.7733
+2025-09-28 17:35:41,120 - trainer - INFO -   Learning Rate: 1.25e-05
+2025-09-28 17:36:07,796 - trainer - INFO - Epoch 18/50
+2025-09-28 17:36:07,796 - trainer - INFO -   Train Losses - Total: 0.1048, Cls: 0.0356, Rec: 0.6918, Adv: 0.0494
+2025-09-28 17:36:07,796 - trainer - INFO -   Validation AUC: 0.7743
+2025-09-28 17:36:07,796 - trainer - INFO -   Learning Rate: 1.25e-05
+2025-09-28 17:36:34,506 - trainer - INFO - Epoch 19/50
+2025-09-28 17:36:34,506 - trainer - INFO -   Train Losses - Total: 0.1037, Cls: 0.0346, Rec: 0.6908, Adv: 0.0509
+2025-09-28 17:36:34,506 - trainer - INFO -   Validation AUC: 0.7735
+2025-09-28 17:36:34,506 - trainer - INFO -   Learning Rate: 1.25e-05
+2025-09-28 17:37:01,101 - trainer - INFO - Epoch 20/50
+2025-09-28 17:37:01,101 - trainer - INFO -   Train Losses - Total: 0.1021, Cls: 0.0330, Rec: 0.6907, Adv: 0.0521
+2025-09-28 17:37:01,101 - trainer - INFO -   Validation AUC: 0.7723
+2025-09-28 17:37:01,101 - trainer - INFO -   Learning Rate: 6.25e-06
+2025-09-28 17:37:27,812 - trainer - INFO - Epoch 21/50
+2025-09-28 17:37:27,812 - trainer - INFO -   Train Losses - Total: 0.1013, Cls: 0.0323, Rec: 0.6900, Adv: 0.0529
+2025-09-28 17:37:27,812 - trainer - INFO -   Validation AUC: 0.7731
+2025-09-28 17:37:27,812 - trainer - INFO -   Learning Rate: 6.25e-06
+2025-09-28 17:37:55,289 - trainer - INFO - Epoch 22/50
+2025-09-28 17:37:55,289 - trainer - INFO -   Train Losses - Total: 0.1005, Cls: 0.0315, Rec: 0.6895, Adv: 0.0549
+2025-09-28 17:37:55,289 - trainer - INFO -   Validation AUC: 0.7732
+2025-09-28 17:37:55,289 - trainer - INFO -   Learning Rate: 6.25e-06
+2025-09-28 17:38:22,450 - trainer - INFO - Epoch 23/50
+2025-09-28 17:38:22,450 - trainer - INFO -   Train Losses - Total: 0.0999, Cls: 0.0310, Rec: 0.6892, Adv: 0.0560
+2025-09-28 17:38:22,450 - trainer - INFO -   Validation AUC: 0.7723
+2025-09-28 17:38:22,451 - trainer - INFO -   Learning Rate: 6.25e-06
+2025-09-28 17:38:49,105 - trainer - INFO - Epoch 24/50
+2025-09-28 17:38:49,105 - trainer - INFO -   Train Losses - Total: 0.0993, Cls: 0.0304, Rec: 0.6888, Adv: 0.0565
+2025-09-28 17:38:49,105 - trainer - INFO -   Validation AUC: 0.7727
+2025-09-28 17:38:49,105 - trainer - INFO -   Learning Rate: 3.13e-06
+2025-09-28 17:39:15,856 - trainer - INFO - Epoch 25/50
+2025-09-28 17:39:15,856 - trainer - INFO -   Train Losses - Total: 0.0990, Cls: 0.0302, Rec: 0.6880, Adv: 0.0569
+2025-09-28 17:39:15,856 - trainer - INFO -   Validation AUC: 0.7740
+2025-09-28 17:39:15,856 - trainer - INFO -   Learning Rate: 3.13e-06
+2025-09-28 17:39:42,457 - trainer - INFO - Epoch 26/50
+2025-09-28 17:39:42,457 - trainer - INFO -   Train Losses - Total: 0.0983, Cls: 0.0295, Rec: 0.6877, Adv: 0.0580
+2025-09-28 17:39:42,457 - trainer - INFO -   Validation AUC: 0.7723
+2025-09-28 17:39:42,457 - trainer - INFO -   Learning Rate: 3.13e-06
+2025-09-28 17:40:09,742 - trainer - INFO - Epoch 27/50
+2025-09-28 17:40:09,742 - trainer - INFO -   Train Losses - Total: 0.0981, Cls: 0.0293, Rec: 0.6878, Adv: 0.0594
+2025-09-28 17:40:09,742 - trainer - INFO -   Validation AUC: 0.7728
+2025-09-28 17:40:09,742 - trainer - INFO -   Learning Rate: 3.13e-06
+2025-09-28 17:40:09,742 - trainer - INFO - Early stopping triggered after 27 epochs
+2025-09-28 17:40:09,742 - trainer - INFO - Training completed!
+2025-09-28 17:40:09,742 - trainer - INFO - Best AUC: 0.7772 at epoch 12
+2025-09-28 17:40:09,742 - pipeline - INFO - Training completed successfully!
+2025-09-28 17:40:09,742 - pipeline - INFO - Best validation AUC: 0.7772
+2025-09-28 17:40:09,742 - pipeline - INFO - Best epoch: 12
+2025-09-28 17:40:09,742 - pipeline - INFO - Starting comprehensive evaluation...
+2025-09-28 17:40:09,743 - pipeline - WARNING - No saved model found, using current model
+2025-09-28 17:40:09,746 - evaluator - INFO - Starting comprehensive evaluation...
+2025-09-28 17:40:14,710 - evaluator - INFO - Evaluation completed on 1992 samples
+2025-09-28 17:40:14,710 - evaluator - INFO - Per-disease AUC scores:
+2025-09-28 17:40:14,710 - evaluator - INFO - ------------------------------------------------------------
+2025-09-28 17:40:14,717 - evaluator - INFO - Atelectasis         : AUC=0.6941, PR-AUC=0.3098, F1=0.3740, Pos=301, Prev=0.151
+2025-09-28 17:40:14,721 - evaluator - INFO - Cardiomegaly        : AUC=0.8648, PR-AUC=0.5750, F1=0.4829, Pos=171, Prev=0.086
+2025-09-28 17:40:14,725 - evaluator - INFO - Effusion            : AUC=0.7398, PR-AUC=0.3980, F1=0.4452, Pos=349, Prev=0.175
+2025-09-28 17:40:14,729 - evaluator - INFO - Infiltration        : AUC=0.6746, PR-AUC=0.3730, F1=0.4458, Pos=458, Prev=0.230
+2025-09-28 17:40:14,733 - evaluator - INFO - Mass                : AUC=0.7394, PR-AUC=0.3788, F1=0.3701, Pos=276, Prev=0.139
+2025-09-28 17:40:14,737 - evaluator - INFO - Nodule              : AUC=0.7133, PR-AUC=0.3276, F1=0.3559, Pos=258, Prev=0.130
+2025-09-28 17:40:14,741 - evaluator - INFO - Pneumonia           : AUC=0.6971, PR-AUC=0.2242, F1=0.2265, Pos=157, Prev=0.079
+2025-09-28 17:40:14,745 - evaluator - INFO - Pneumothorax        : AUC=0.8181, PR-AUC=0.4727, F1=0.4434, Pos=259, Prev=0.130
+2025-09-28 17:40:14,748 - evaluator - INFO - Consolidation       : AUC=0.7141, PR-AUC=0.2871, F1=0.3726, Pos=251, Prev=0.126
+2025-09-28 17:40:14,752 - evaluator - INFO - Edema               : AUC=0.8586, PR-AUC=0.4583, F1=0.5052, Pos=215, Prev=0.108
+2025-09-28 17:40:14,756 - evaluator - INFO - Emphysema           : AUC=0.9060, PR-AUC=0.7330, F1=0.5743, Pos=274, Prev=0.138
+2025-09-28 17:40:14,760 - evaluator - INFO - Fibrosis            : AUC=0.8598, PR-AUC=0.5378, F1=0.4473, Pos=220, Prev=0.110
+2025-09-28 17:40:14,764 - evaluator - INFO - Pleural_Thickening  : AUC=0.7411, PR-AUC=0.3153, F1=0.3721, Pos=240, Prev=0.120
+2025-09-28 17:40:14,768 - evaluator - INFO - Hernia              : AUC=0.9248, PR-AUC=0.5161, F1=0.2375, Pos=26, Prev=0.013
+2025-09-28 17:40:14,768 - evaluator - INFO - ------------------------------------------------------------
+2025-09-28 17:40:14,768 - evaluator - INFO - Overall Statistics:
+2025-09-28 17:40:14,768 - evaluator - INFO -   Mean AUC: 0.7818 ± 0.0832
+2025-09-28 17:40:14,768 - evaluator - INFO -   AUC Range: [0.6746, 0.9248]
+2025-09-28 17:40:14,768 - evaluator - INFO -   Mean PR-AUC: 0.4219 ± 0.1313
+2025-09-28 17:40:14,768 - evaluator - INFO -   Mean F1: 0.4038 ± 0.0918
+2025-09-28 17:40:14,768 - evaluator - INFO - Calculating bootstrap confidence intervals...
+2025-09-28 17:40:30,484 - evaluator - INFO -   Bootstrap 95% CI: [0.7714, 0.7909]
+2025-09-28 17:40:30,502 - evaluator - INFO - Statistical Tests:
+2025-09-28 17:40:30,502 - evaluator - INFO -   t-test vs random (p=0.0000): Significant
+2025-09-28 17:40:33,156 - evaluator - INFO - ROC curves saved: multimodal_anogan_resnet50/roc_curves_multimodal_anogan.png
+2025-09-28 17:40:35,719 - evaluator - INFO - PR curves saved: multimodal_anogan_resnet50/pr_curves_multimodal_anogan.png
+2025-09-28 17:40:36,895 - evaluator - INFO - Performance distribution saved: multimodal_anogan_resnet50/performance_distribution_multimodal_anogan.png
+2025-09-28 17:40:38,151 - evaluator - INFO - Confusion matrices saved: multimodal_anogan_resnet50/confusion_matrices_multimodal_anogan.png
+2025-09-28 17:40:39,643 - evaluator - INFO - Calibration curves saved: multimodal_anogan_resnet50/calibration_curves_multimodal_anogan.png
+2025-09-28 17:40:39,693 - evaluator - INFO - Summary report saved: multimodal_anogan_resnet50/evaluation_summary.txt
+2025-09-28 17:40:39,693 - evaluator - INFO - Results saved to multimodal_anogan_resnet50/
+2025-09-28 17:40:39,693 - pipeline - INFO - Evaluation completed successfully!
+2025-09-28 17:40:39,707 - pipeline - INFO - Final results saved: multimodal_anogan_resnet50/final_results_multimodal_anogan_20250928_174039.json
+2025-09-28 17:40:39,708 - pipeline - INFO - Performance summary saved: multimodal_anogan_resnet50/performance_summary_multimodal_anogan.csv
+2025-09-28 17:40:39,708 - pipeline - INFO - 
+FINAL PERFORMANCE SUMMARY:
+2025-09-28 17:40:39,708 - pipeline - INFO - ----------------------------------------
+2025-09-28 17:40:39,708 - pipeline - INFO - Mean AUC: 0.7818 ± 0.0832
+2025-09-28 17:40:39,708 - pipeline - INFO - Mean PR-AUC: 0.4219
+2025-09-28 17:40:39,709 - pipeline - INFO - Mean F1: 0.4038
+2025-09-28 17:40:39,709 - pipeline - INFO - 95% CI: [0.7714, 0.7909]
+2025-09-28 17:40:39,709 - pipeline - INFO - Significantly better than random: Yes
+2025-09-28 17:40:39,709 - pipeline - INFO - 
+Top 3 diseases by AUC:
+2025-09-28 17:40:39,709 - pipeline - INFO -   Hernia: 0.9248
+2025-09-28 17:40:39,709 - pipeline - INFO -   Emphysema: 0.9060
+2025-09-28 17:40:39,709 - pipeline - INFO -   Cardiomegaly: 0.8648
+2025-09-28 17:40:39,709 - pipeline - INFO - 
+Bottom 3 diseases by AUC:
+2025-09-28 17:40:39,709 - pipeline - INFO -   Infiltration: 0.6746
+2025-09-28 17:40:39,709 - pipeline - INFO -   Atelectasis: 0.6941
+2025-09-28 17:40:39,709 - pipeline - INFO -   Pneumonia: 0.6971
+2025-09-28 17:40:39,709 - pipeline - INFO - ============================================================
+2025-09-28 17:40:39,709 - pipeline - INFO - PIPELINE COMPLETED SUCCESSFULLY!
+2025-09-28 17:40:39,709 - pipeline - INFO - ============================================================
+2025-09-28 17:40:39,738 - __main__ - INFO - Generated files:
+2025-09-28 17:40:39,739 - __main__ - INFO -   • Training log: training_multimodal_anogan.log
+2025-09-28 17:40:39,739 - __main__ - INFO -   • Best model: best_model_multimodal_anogan.pth
+2025-09-28 17:40:39,739 - __main__ - INFO -   • Results directory: results_multimodal_anogan/
+2025-09-28 17:40:39,739 - __main__ - INFO -   • Performance plots: *_multimodal_anogan.png
+2025-09-28 17:40:39,739 - __main__ - INFO -   • Summary CSV: performance_summary_multimodal_anogan.csv
